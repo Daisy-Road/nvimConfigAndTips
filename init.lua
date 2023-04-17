@@ -61,6 +61,9 @@ local plugins = {
     },
     { "xiyaowong/nvim-transparent" ,
         lazy = false,
+    },
+    { "github/copilot.vim",
+        cmd = "Copilot",
     }
 }
 
