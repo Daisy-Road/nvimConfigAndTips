@@ -136,7 +136,7 @@ require("lualine").setup({
                     return msg
                 end,
                 icon = ' LSP:',
-                color = { fg = colors.peach, gui = 'bold' }, 
+                color = { fg = colors.pink, gui = 'bold' }, 
             },
         },
     }

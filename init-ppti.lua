@@ -64,6 +64,21 @@ local plugins = {
 -- Enabling lazy nvim
 require("lazy").setup(plugins, opts)
 
+-- Setting up colorscheme and retrieving color palette
+vim.cmd.colorscheme "catppuccin-mocha"
+local colors = require("catppuccin.palettes").get_palette()
+require("catppuccin").setup({
+    integrations = {
+        barbar = true,
+        mason = true,
+        cmp = true,
+        nvimtree = true,
+        treesitter_context = true,
+        telescope = true,
+    },
+})
+
+
 -- Enabling nvim-tree
 require("nvim-tree").setup()
 
@@ -80,6 +95,31 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 require("lualine").setup({
     options = {
         disabled_filetypes = { 'NvimTree' },
+	theme = "catppuccin"
+    },
+    sections = {
+        lualine_c = {
+            -- Showing up the active LSP
+            { 
+                function()
+                    local msg = ''
+                    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+                    local clients = vim.lsp.get_active_clients()
+                    if next(clients) == nil then
+                        return msg
+                    end
+                    for _, client in ipairs(clients) do
+                        local filetypes = client.config.filetypes
+                        if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                            return client.name
+                        end
+                    end
+                    return msg
+                end,
+                icon = ' LSP:',
+                color = { fg = colors.pink, gui = 'bold' }, 
+            },
+        },
     }
 })
 
@@ -125,9 +165,6 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['clangd'].setup {
     capabilities = capabilities
 }
-
--- Setting up appareance
-vim.cmd.colorscheme "catppuccin-mocha"
 
 -- Setting up basic configuration
 vim.cmd.set "relativenumber"
