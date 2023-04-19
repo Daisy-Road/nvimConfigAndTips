@@ -41,7 +41,7 @@ Ce document est essentiellement orientés pour les gens ne connaissant pas ce lo
 # Fonctionnement basique
 
 ## Prise en main
-Comprenont rapidement comment le logiciel fonctionne. Avant toute chose, installer le avec votre package manager favori. Le package se nomme *"neovim"* mais pour l'éxécuter, vous devrez taper `nvim` dans le terminal.  
+Comprenons rapidement comment le logiciel fonctionne. Avant toute chose, installer le avec votre package manager favori. Le package se nomme *"neovim"* mais pour l'éxécuter, vous devrez taper `nvim` dans le terminal.  
 
 Vous pouvez ouvrir un fichier directement après l'ouverture en spécifiant le fichier après la commande, et vous pouvez en mettre plusieurs. Même si ce fichier n'existe pas...  
 ```bash
@@ -52,7 +52,7 @@ Une fois dessus, vous ne pouvez pas commencer à modifier les fichiers tout de s
 
 - **Normal**: C'est le mode de départ, ici, vous pouvez naviguer dans le dossier et exécuter des commandes en tapant sur `:`
 - **Insertion**: C'est le mode d'édition, c'est ici que vous pourrez modifier votre fichier... Vous pouvez y accéder en tapant sur `i` en mode **Normal** et retourner en mode **Normal** en appuyant sur `Esc`
-- **Visuel**: C'est un mode de séléection, vous pouvez utiliser les commandes d'éditions sur une zone spécifique, vous pouvez y accéder en appuyant sur `v` en mode **Normal** et en sortir pour retourner en mode **Normal** en appuyant sur `Esc`
+- **Visuel**: C'est un mode de séléction, vous pouvez utiliser les commandes d'éditions sur une zone spécifique, vous pouvez y accéder en appuyant sur `v` en mode **Normal** et en sortir pour retourner en mode **Normal** en appuyant sur `Esc`
 
 Ici, nous ne ferons pas un tutoriel complet, une parfaite introduction est déjà disponible sur le logiciel. Vous pouvez y accéder en tapant la commande suivant sur Neovim: 
 ```vim
