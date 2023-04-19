@@ -62,7 +62,7 @@ Ici, nous ne ferons pas un tutoriel complet, une parfaite introduction est déj�
 
 Neovim est hautement customisable, et la communauté de développeur autour est florissante.  
 
-Vos fichiers de configuration sont accessibles dans `~/.config/nvim/` à l'intéreiru vous pourrez notamment mettre le fichier `init.lua` qui exécutera les codes écrit en lua dès l'ouverture de Neovim. C'est ce fichier que vous trouverez sur ce dépôt GitHub.  
+Vos fichiers de configuration sont accessibles dans `~/.config/nvim/` à l'intérieur vous pourrez notamment mettre le fichier `init.lua` qui exécutera les codes écrit en lua dès l'ouverture de Neovim. C'est ce fichier que vous trouverez sur ce dépôt GitHub.  
 
 Pour en savoir plus sur la customisation, n'hésitez pas à faire un tour sur les liens de [la section en bref](#en-bref) pour en apprendre plus sur les plugins et les configurations.  
 
@@ -70,7 +70,7 @@ Pour en savoir plus sur la customisation, n'hésitez pas à faire un tour sur le
 
 Le [LSP (Language Server Protocol)](https://en.wikipedia.org/wiki/Language_Server_Protocol) est la partie la plus importe de Neovim, car c'est grâce à ce service que la syntaxe de votre programme sera évaluée en temps réel.  
 
-Il existe pleins de LSP différent, et ce système n'est pas propre à NeoVim. Toutefois, nous l'abordons ici car il s'agit d'un élément fondamental pour programmer.  
+Il existe pleins de LSP différent, et ce système n'est pas propre à Neovim. Toutefois, nous l'abordons ici car il s'agit d'un élément fondamental pour programmer.  
 
 Avec le plugin [Mason](https://github.com/williamboman/mason.nvim) couplé à [Mason lspconfig](https://github.com/williamboman/mason-lspconfig.nvim), il est possible de se construire un evironnement efficace et d'installer rapidement un **LSP** pour chacun des langages édités, et aussi de les customiser.  
 
@@ -83,7 +83,7 @@ Neovim n'est pas directement disponible sur les ordinateur de la PPTI. ***But, f
 > :bulb: Ce document est adressé aux personnes ayant des connaissances basiques sur l'environnement Linux et les outils associés. Si ce n'est pas votre cas, n'hésitez pas à faire un tour sur le [Wiki](https://github.com/Daisy-Road/wiki/wiki) si nécéssaire !
 
 ## Installation
-A distance via SSH ou directement sur une machine, vous pouvez installer NeoVim grâce à au fichier `.appimage` disponible sur le [dépôt GitHub de Neovim](https://github.com/neovim/neovim) :o  
+A distance via SSH ou directement sur une machine, vous pouvez installer Neovim grâce au fichier `.appimage` disponible sur le [dépôt GitHub de Neovim](https://github.com/neovim/neovim) :o  
 
 Dans l'onglet *"Releases"* accéder à la dernière ressource stable publiée et localiser le fichier `nvim.appimage`. Cliquez droit sur ce fichier, copiez le lien, puis télécharger le via `wget` !  
 ```bash
@@ -104,7 +104,7 @@ Ce qui serait cool, ça serait de pouvoir l'exécuter depuis n'importe où et l'
 
 ## Pré-installation (implémentation de `nvim`)
 
-Pour cela, nous allons simplement créer un alias de commande. Et si on utiliser notre NeoVim tout neuf pour le faire ? :D
+Pour cela, nous allons simplement créer un alias de commande. Et si on utilise notre Neovim tout neuf pour le faire ? :D
 
 Si vous êtes sur le dossier `~` de votre aborescence (et que l'appimage de Neovim s'y trouve évidemment) modifier votre `.bashrc`:
 ```bash
@@ -112,9 +112,9 @@ Si vous êtes sur le dossier `~` de votre aborescence (et que l'appimage de Neov
 ```
 Puis ensuite copier les infos suivantes où vous voulez dans le fichier (tant que ça reste cohérent :p)
 ```bash
-alias nvim="~/nvim.appimage $1"
+alias nvim="~/nvim.appimage $@"
 ```
-Ceci aura pour effet de créer un alias de commande qui exécutera l'appimage de Neovim lorsque vous taperez `nvim` sur le terminal. Le `$1` sert à prendre en compte les arguments que vous avez entré après la commande, ainsi, elle fonctionnera de la même manière que sur votre ordinateur personnel.  
+Ceci aura pour effet de créer un alias de commande qui exécutera l'appimage de Neovim lorsque vous taperez `nvim` sur le terminal. Le `$@` sert à prendre en compte les arguments que vous avez entré après la commande, ainsi, elle fonctionnera de la même manière que sur votre ordinateur personnel.  
 
 Vous pouvez appliquer ces changements immédiatemment en sourçant votre `.bashrc`
 ```bash
