@@ -1,5 +1,6 @@
 vim.opt.termguicolors = true
 vim.opt.showmode = false
+vim.opt.clipboard = "unnamedplus"
 
 -- Retrieving lazy nvim bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
