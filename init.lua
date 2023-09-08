@@ -65,7 +65,7 @@ local plugins = {
     },
     { "github/copilot.vim",
         cmd = "Copilot",
-    }
+    },
 }
 
 --Setting up WSL Keyboard
@@ -94,7 +94,7 @@ require("catppuccin").setup({
         mason = true,
         cmp = true,
         nvimtree = true,
-        treesitter_context = true,
+        --treesitter_context = true,
         telescope = true,
     },
 })
@@ -108,6 +108,11 @@ require("mason").setup()
 -- Enabling lsp
 local lspconfig = require('lspconfig')
 lspconfig.clangd.setup {}
+lspconfig.pyright.setup {}
+lspconfig.jdtls.setup {}
+-- TODO jdtls functions only when file is open 2 times. Which is bad. to fix
+
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] =      
      vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,{ update_in_insert = true })
 
@@ -208,10 +213,12 @@ vim.cmd.set "expandtab"
 
 -- Autocmd
 -- Formatting on save with Neoformat command
+
+-- TODO use Neoformat according to the filetype in use.
 vim.cmd [[
 augroup fmt
   autocmd!
-  autocmd BufWritePre * Neoformat
+  autocmd BufWritePre * undojoin | Neoformat
 augroup END
 ]]
 
