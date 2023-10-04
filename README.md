@@ -110,7 +110,7 @@ et exécutez le simplement avec
 
 Ce qui serait cool, ça serait de pouvoir l'exécuter depuis n'importe où et l'utiliser comme la commande `nvim` classique n'est-ce pas ?  
 
-## Pré-installation (implémentation de `nvim`)
+## Post-installation (implémentation de `nvim`)
 
 Pour cela, nous allons simplement créer un alias de commande. Et si on utilise notre Neovim tout neuf pour le faire ? :D
 
