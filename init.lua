@@ -27,10 +27,10 @@ local plugins = {
     },
     { "catppuccin/nvim", name = "catppuccin" },
     { "williamboman/mason.nvim", 
-    	lazy = false, 
+        lazy = false,
     },
     { "williamboman/mason-lspconfig.nvim",
-        lazy = false,
+        lazy = true,
         dependencies = { "neovim/nvim-lspconfig", }
     },
     { "nvim-treesitter/nvim-treesitter",
@@ -63,6 +63,9 @@ local plugins = {
     { "xiyaowong/nvim-transparent" ,
         lazy = false,
     },
+    { "mfussenegger/nvim-jdtls" ,
+        ft = {"java"},
+    },
     { "github/copilot.vim",
         cmd = "Copilot",
     },
@@ -85,6 +88,9 @@ vim.g.clipboard = {
 -- Enabling lazy nvim
 require("lazy").setup(plugins, opts)
 
+-- Enabling mason
+require("mason").setup()
+
 -- Setting up colorscheme and retrieving color palette
 vim.cmd.colorscheme "catppuccin-mocha"
 local colors = require("catppuccin.palettes").get_palette()
@@ -102,14 +108,6 @@ require("catppuccin").setup({
 -- Enabling nvim-tree
 require("nvim-tree").setup()
 
--- Enabling mason
-require("mason").setup()
-
--- Enabling lsp
-local lspconfig = require('lspconfig')
-lspconfig.clangd.setup {}
-lspconfig.pyright.setup {}
-lspconfig.jdtls.setup {}
 -- TODO jdtls functions only when file is open 2 times. Which is bad. to fix
 
 
@@ -163,34 +161,6 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
--- Setting cmp for code completion
-local cmp = require("cmp")
-cmp.setup({
-    snippet = {
-        expand = function(args)
-	    require("luasnip").lsp_expand(args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    }),
-    sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-	{ name = "luasnip" },
-    }, {
-        { name = "buffer"},
-    }),
-})
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['clangd'].setup {
-    capabilities = capabilities
-}
-
 -- Setting up appareance
 require("transparent").setup({
   extra_groups = {
@@ -221,7 +191,6 @@ augroup fmt
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
 ]]
-
 -- Mappings
 
 local map = vim.api.nvim_set_keymap

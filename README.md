@@ -1,6 +1,7 @@
 # En bref
 La configuration `init.lua` est la plus complète et a été réalisée sur un WSL dotée de [win32yank.exe](https://github.com/equalsraf/win32yank) (vous pouvez ôter cette configuration sans soucis). La configuration `init-ppti.lua` a été réalisé pour un environnement universitaire limité basé sur Linux.   
-Le plugin manager est [LazyVim](https://github.com/LazyVim/LazyVim) et les deux configurations contient les plugins suivants (les plugins en sous listes sont des dépendences indiquées dans le fichier)
+Le plugin manager est [LazyVim](https://github.com/LazyVim/LazyVim) et les deux configurations contient les plugins suivants (les plugins en sous listes sont des dépendences indiquées dans le fichier)  
+
 - [Nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
   - [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - [Barbar](https://github.com/romgrk/barbar.nvim)
@@ -9,6 +10,7 @@ Le plugin manager est [LazyVim](https://github.com/LazyVim/LazyVim) et les deux 
 - [Mason](https://github.com/williamboman/mason.nvim)
 - [Mason lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
   - [Nvim lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [Nvim jdtls](https://github.com/mfussenegger/nvim-jdtls)
 - [Nvim Tresitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
   - [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
@@ -28,6 +30,10 @@ Le plugin manager est [LazyVim](https://github.com/LazyVim/LazyVim) et les deux 
 - [GitHub Copilot (exclu de la config ppti)](https://github.com/github/copilot.vim)
 
 Neovim et les plugins tierses cités ci-dessous ont tous des licenses OpenSource différentes disponibles sur leur pages GitHub. Je ne suis pas affilié de quelque façon que ce soit à ces groupes et à NeoVim lui même.
+
+Sur cette configuration, les plugins de lsp et de cmp sont lazy loadé, il sont chargé seulement lorsque un fichier de code compatible est ouvert. Vous pouvez consulter ces comportement de le dossier `ftplugin`
+
+:warning: Cette configuration utilisant `Nvim jdtls` la configuration pour Java doit changer en fonction de vos installation, consultez le [github du plugin en question](https://github.com/mfussenegger/nvim-jdtls) pour en savoir plus.
 
 # Introduction
 A proprement parler [Neovim](https://neovim.io/) est une modification de l'éditeur de texte [Vim](https://www.vim.org/), lui même une amlioration de l'éditeur [Vi](https://fr.wikipedia.org/wiki/Vi). C'est un logiciel dans le terminal, et bien que cela semble très vieux et peu pratique, l'évolution du fonctionnement du terminal ont permis à cet éditeur de texte a être particulièrement performant.  
