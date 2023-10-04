@@ -35,7 +35,7 @@ Sur cette configuration, les plugins de lsp et de cmp sont lazy loadé, il sont 
 
 Notez en revanche que la configuration "ppti" n'utilise pas le dossier `ftplugin` et ne profites pas bien des capacités du plugin manager (Une mise à jour est prévue)
 
-:warning: Cette configuration utilisant `Nvim jdtls` la configuration pour Java doit changer en fonction de vos installation, consultez le [github du plugin en question](https://github.com/mfussenegger/nvim-jdtls) pour en savoir plus.
+:warning: Cette configuration utilisant `Nvim jdtls` la configuration pour Java doit changer en fonction de votre installation, consultez le [github du plugin en question](https://github.com/mfussenegger/nvim-jdtls) pour en savoir plus.
 
 # Introduction
 A proprement parler [Neovim](https://neovim.io/) est une modification de l'éditeur de texte [Vim](https://www.vim.org/), lui même une amlioration de l'éditeur [Vi](https://fr.wikipedia.org/wiki/Vi). C'est un logiciel dans le terminal, et bien que cela semble très vieux et peu pratique, l'évolution du fonctionnement du terminal ont permis à cet éditeur de texte a être particulièrement performant.  
