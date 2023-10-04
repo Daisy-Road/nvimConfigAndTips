@@ -32,7 +32,8 @@ Le plugin manager est [LazyVim](https://github.com/LazyVim/LazyVim) et les deux 
 Neovim et les plugins tierses cités ci-dessous ont tous des licenses OpenSource différentes disponibles sur leur pages GitHub. Je ne suis pas affilié de quelque façon que ce soit à ces groupes et à NeoVim lui même.
 
 Sur cette configuration, les plugins de lsp et de cmp sont lazy loadé, il sont chargé seulement lorsque un fichier de code compatible est ouvert. Vous pouvez consulter ces comportement de le dossier `ftplugin`  
-Notez en revanche que la configuration "ppti" n'utilise pas le dossier `ftplugin` et ne profites pas bien des capacité du plugin manager (Une mise à jour est prévue)
+
+Notez en revanche que la configuration "ppti" n'utilise pas le dossier `ftplugin` et ne profites pas bien des capacités du plugin manager (Une mise à jour est prévue)
 
 :warning: Cette configuration utilisant `Nvim jdtls` la configuration pour Java doit changer en fonction de vos installation, consultez le [github du plugin en question](https://github.com/mfussenegger/nvim-jdtls) pour en savoir plus.
 
