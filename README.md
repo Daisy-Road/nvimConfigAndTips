@@ -10,7 +10,7 @@ Le plugin manager est [LazyVim](https://github.com/LazyVim/LazyVim) et les deux 
 - [Mason](https://github.com/williamboman/mason.nvim)
 - [Mason lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
   - [Nvim lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [Nvim jdtls](https://github.com/mfussenegger/nvim-jdtls) (exclu de la config ppti)
+- [Nvim jdtls (exclu de la config ppti)](https://github.com/mfussenegger/nvim-jdtls)
 - [Nvim Tresitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
   - [Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
